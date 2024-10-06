@@ -12,7 +12,8 @@ const requireAuth=async (req,res,next)=>{
 
     const token=authorisation.split(' ')[1];
     try{
-        const {_id}=jwt.verify(token, process.env.SECRET)
+        const {_id}=jwt.verify(token, process.env.JWT_SECRET)
+        //used JWT_SECRET instead of SECRET to avoid confusion with the secret key used in env file
         req.user=await User.findOne({_id}).select('_id')
         next()
     }catch(error){
