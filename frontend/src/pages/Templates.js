@@ -6,8 +6,8 @@ import { useTemplatessContext } from '../hooks/useTemplateContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 
 const Template = () => {
-  const { templates, dispatch } = useTemplatessContext(); 
-  const { user } = useAuthContext(); 
+  const { templates, dispatch } = useTemplatessContext();
+  const { user } = useAuthContext();
 
   useEffect(() => {
     const fetchTemplates = async () => {
@@ -44,7 +44,6 @@ const Template = () => {
     }
   };
 
-  // Handle deleting a template
   const handleDeleteTemplate = async (templateId) => {
     const response = await fetch(`/api/templates/${templateId}`, {
       method: 'DELETE',
@@ -58,7 +57,6 @@ const Template = () => {
     }
   };
 
-  // Handle editing an existing template
   const handleEditTemplate = async (updatedTemplate) => {
     const response = await fetch(`/api/templates/${updatedTemplate._id}`, {
       method: 'PATCH',
@@ -76,7 +74,7 @@ const Template = () => {
   };
 
   return (
-<Container maxWidth="lg" sx={{ marginTop: 4 }}>
+    <Container maxWidth="lg" sx={{ marginTop: 4 }}>
       <Grid container spacing={4}>
         {/* Header */}
         <Grid item xs={12}>
@@ -87,7 +85,7 @@ const Template = () => {
 
         {/* Form Section */}
         <Grid item xs={12} md={6}>
-          <Paper elevation={3} sx={{ padding: 3 }}>
+          <Paper elevation={3} sx={{ padding: 3, borderRadius: '12px', backgroundColor: '#f5f5f5' }}>
             <Typography variant="h6" gutterBottom>
               Create New Template
             </Typography>
@@ -97,7 +95,7 @@ const Template = () => {
 
         {/* List Section */}
         <Grid item xs={12} md={6}>
-          <Paper elevation={3} sx={{ padding: 3 }}>
+          <Paper elevation={3} sx={{ padding: 3, borderRadius: '12px', backgroundColor: '#f5f5f5' }}>
             <Typography variant="h6" gutterBottom>
               Available Templates
             </Typography>
@@ -112,6 +110,5 @@ const Template = () => {
     </Container>
   );
 };
-
 
 export default Template;
