@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Templates from './pages/Templates';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   const {user}=useAuthContext()
@@ -24,6 +25,10 @@ function App() {
               element={user?<Templates/>:<Navigate to='/login'/>}
             />
             <Route
+              path='/dashboard'
+              element={user?<Dashboard/>:<Navigate to='/login'/>}
+            />
+            <Route
               path='/login'
               element={!user?<Login/>:<Navigate to ='/'/>}
             />
@@ -31,6 +36,7 @@ function App() {
               path='/signup'
               element={!user?<Signup/>:<Navigate to ='/'/>}
             />
+            
 
           </Routes>
         </div>
