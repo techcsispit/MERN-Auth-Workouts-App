@@ -18,18 +18,25 @@ const Navbar = () => {
                 <Link to='/'>
                     <h1>Workout Buddy</h1>
                 </Link>
-                <Link
-          to="/templates" // Replace with the actual route for your templates page
-          className="bg-blue-500 text-white  rounded-md shadow-md hover:bg-blue-600 transition"
-        >
-          Go to Templates
-        </Link>
+
         </div>
                 <nav>
                     {user && (
                     <div>
                         <span>{user.email}</span>
                         <button onClick={handleClick}>Log out</button>
+                        <Link
+          to="/dashboard" // Replace with the actual route for your templates page
+          className="bg-blue-500 text-white  rounded-md shadow-md hover:bg-blue-600 transition pr-2"
+        >
+          Dashboard
+        </Link>
+        <Link
+          to="/templates" // Replace with the actual route for your templates page
+          className="bg-blue-500 text-white  rounded-md shadow-md hover:bg-blue-600 transition"
+        >
+           Templates
+        </Link>
                     </div>
                     )}
                     {!user && (<div>
