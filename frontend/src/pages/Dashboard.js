@@ -5,6 +5,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 import { useAuthContext } from '../hooks/useAuthContext';
 import { useTemplatessContext } from '../hooks/useTemplateContext';
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext';
+import StreakTracker from '../components/StreakTracker';
 // import RecentWorkoutsTable from '../components/RecentWorkoutsTable';
 
 // Register chart.js components
@@ -94,11 +95,16 @@ const scatterChartData = {
 
   return (
     <Container>
+
       <Grid container spacing={4}>
         <Grid item xs={12}>
           <Typography variant="h4" align="center" gutterBottom>
             Workout Dashboard
           </Typography>
+                  {/* Streak Tracker */}
+        <Grid item xs={12} md={12}>
+          <StreakTracker workouts={workouts} />
+        </Grid>
         </Grid>
 
         {/* Line Chart for Performance */}
