@@ -5,14 +5,33 @@
 :root {
   --primary: #1aac83;
   --error: #e7195a;
+  --background: #f1f1f1;
+  --surface: #fff;
+  --on-surface: #333;
+  --on-background: #555;
+  --shadow: rgba(0,0,0,0.05);
 }
+
+body.dark-mode {
+  --primary: #2ecc9a;
+  --error: #ff4081;
+  --background: #121212;
+  --surface: #1e1e1e;
+  --on-surface: #e0e0e0;
+  --on-background: #b0b0b0;
+  --shadow: rgba(255,255,255,0.05);
+} 
+  
 body {
-  background: #f1f1f1;
+  background: var(--background);
   margin: 0;
   font-family: "Poppins";
+  color: var(--on-background);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 header {
-  background: #fff;
+  background: var(--surface);
 }
 header .container {
   max-width: 1400px;
@@ -23,7 +42,7 @@ header .container {
   justify-content: space-between;
 }
 header a {
-  color: #333;
+  color: var(--on-surface);
   text-decoration: none;
 }
 .pages{
@@ -43,12 +62,12 @@ header a {
   gap: 100px;
 }
 .workout-details {
-  background: #fff;
+  background: var(--surface);
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 2px 2px 5px var(--shadow);
 }
 .workout-details h4 {
   margin: 0 0 10px 0;
@@ -58,17 +77,17 @@ header a {
 .workout-details p {
   margin: 0;
   font-size: 0.9em;
-  color: #555;
+  color: var(--on-background);
 }
 .workout-details span {
   position: absolute;
   top: 20px;
   right: 20px;
   cursor: pointer;
-  background: #f1f1f1;
+  background: var(--background);
   padding: 6px;
   border-radius: 50%;
-  color: #333;
+  color: var(--on-surface);
 }
 
 /* new workout form */
@@ -80,14 +99,16 @@ input {
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid var(--on-background);
   border-radius: 4px;
+  background: var(--surface);
+  color: var(--on-surface);
   box-sizing: border-box;
 }
 form button {
   background: var(--primary);
   border: 0;
-  color: #fff;
+  color: var(--surface);
   padding: 10px;
   font-family: "Poppins";
   border-radius: 4px;
@@ -95,7 +116,7 @@ form button {
 }
 div.error {
   padding: 10px;
-  background: #ffefef;
+  background: var(--background);
   border: 1px solid var(--error);
   color: var(--error);
   border-radius: 4px;
@@ -105,7 +126,7 @@ input.error{
   border:1px solid var(--error);
 }
 
-/*navber*/
+/*navbar*/
 nav{
   display:flex;
   align-items:center;
@@ -114,7 +135,7 @@ nav a{
   margin-left:10px;
 }
 nav button{
-  background: #fff;
+  background: var(--surface);
   color:var(--primary);
   border: 2px solid var(--primary);
   padding: 6px 10px;
@@ -129,7 +150,7 @@ form.signup,form.login{
   max-width:400px;
   margin:40px auto;
   padding:10px;
-  background:#fff;
+  background:var(--surface);
   border-radius:4px;
 }
 
@@ -162,13 +183,12 @@ form.signup,form.login{
   /* padding: 10px; */
   margin-top: 10px;
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--on-background);
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: var(--surface);
   font-family: "Poppins";
   font-size: 1em;
-
 }
 
 .create{
@@ -179,6 +199,29 @@ form.signup,form.login{
   cursor: pointer;
   margin-top: 10px;
   width: 100%;
+}
 
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--text);
+  width: 24px;
+  height: 24px;
+}
 
+.theme-toggle svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+.theme-toggle .moon {
+  display: none;
+}
+body.dark-mode .theme-toggle .sun {
+  display: none;
+}
+body.dark-mode .theme-toggle .moon {
+  display: inline-block;
 }

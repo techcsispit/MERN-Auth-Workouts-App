@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useLogout } from '../hooks/useLogout';
+import DarkModeToggle from "./DarkMode";
 
 const Navbar = () => {
 
@@ -37,6 +38,7 @@ const Navbar = () => {
                         <Link to='/signup'>Signup</Link>
                     </div>
                     )}
+                 <DarkModeToggle />
                 </nav>
             </div>
         </header>
