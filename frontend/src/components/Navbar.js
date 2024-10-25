@@ -24,8 +24,8 @@ const Navbar = () => {
                 <nav>
                     {user && (
                     <div>
-                        <span>{user.email}</span>
-                        <button onClick={handleClick}>Log out</button>
+                        {/* <span>{user.email}</span> */}
+                       
                         <Link
           to="/dashboard" // Replace with the actual route for your templates page
           className="bg-blue-500 text-white  rounded-md shadow-md hover:bg-blue-600 transition pr-2"
@@ -38,6 +38,13 @@ const Navbar = () => {
         >
            Templates
         </Link>
+        <Link
+          to="/goals" // Replace with the actual route for your templates page
+          className="bg-blue-500 text-white  rounded-md shadow-md hover:bg-blue-600 transition"
+        >
+           Goals
+        </Link>
+        
                     </div>
                     )}
                     {!user && (<div>
@@ -46,6 +53,7 @@ const Navbar = () => {
                     </div>
                     )}
                  <DarkModeToggle />
+                 <button onClick={handleClick}>Log out</button>
                 </nav>
             </div>
         </header>

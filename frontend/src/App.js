@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Templates from './pages/Templates';
 import Dashboard from './pages/Dashboard';
+import GoalsComponent from './pages/Goal';
 
 function App() {
   const {user}=useAuthContext()
@@ -36,7 +37,10 @@ function App() {
               path='/signup'
               element={!user?<Signup/>:<Navigate to ='/'/>}
             />
-            
+            <Route
+            path='/goals'
+            element={<GoalsComponent/>}
+            />
 
           </Routes>
         </div>
