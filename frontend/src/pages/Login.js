@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLogin } from '../hooks/useLogin';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';  // Import eye icons for show/hide password
 import { toast, ToastContainer } from 'react-toastify';  // Import toast functions
+import { MdFitbit } from "react-icons/md";
 import 'react-toastify/dist/ReactToastify.css';  // Import React Toastify CSS
 
 const Login = () => {
@@ -48,11 +49,23 @@ const Login = () => {
 
     return (
         <>
-            <form className="signup" onSubmit={handleSubmit}>
-                <h3>Log In</h3>
+        <div className="auth-container">
+      <div className="auth-form">
+        <div className="auth-form-container">
+          <div className="auth-logo">
+            <MdFitbit />
+            <h2>Welcome to WorkoutBuddy</h2>
+            <p>Your perfect workout partner</p>
+          </div>
 
+          <div className="auth-card">
+           <div className="auth-tab">
+            Login
+           </div>
+           <div className="auth-form-content">
+            <form className="signup" onSubmit={handleSubmit}>
                 {/* Email input */}
-                <label>Email:</label>
+                <label>Email</label>
                 <input
                     type='email'
                     onChange={(e) => setEmail(e.target.value)}  // Update email state
@@ -61,7 +74,7 @@ const Login = () => {
                 />
 
                 {/* Password input with show/hide functionality */}
-                <label>Password:</label>
+                <label>Password</label>
                 <div style={{ position: 'relative' }}>  {/* Wrapper for password input and icon */}
                     <input
                         type={showPassword ? 'text' : 'password'}  // Toggle between 'password' and 'text'
@@ -84,11 +97,22 @@ const Login = () => {
                 </div>
 
                 {/* Submit button */}
-                <button disabled={isLoading}>Log In</button>  {/* Disabled while loading */}
+                <button disabled={isLoading} className='auth-button'>Log In</button>  {/* Disabled while loading */}
+                <p className="auth-link">
+                        Don't have an account?{' '}
+                        <a href="/signup" className="auth-link-text">
+                          Sign up
+                        </a>
+                      </p>
             </form>
 
             {/* Toast Container */}
             <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
         </>
     );
 };

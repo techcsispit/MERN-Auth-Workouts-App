@@ -1,5 +1,6 @@
 /* google font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Headland+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* layout */
 :root {
@@ -9,7 +10,9 @@
   --surface: #fff;
   --on-surface: #333;
   --on-background: #555;
-  --shadow: rgba(0,0,0,0.05);
+  --border:#d1d5db;
+  --shadow: rgba(0,0,0,0.1);
+  --text: #1e1a6f;
 }
 
 body.dark-mode {
@@ -19,7 +22,9 @@ body.dark-mode {
   --surface: #1e1e1e;
   --on-surface: #e0e0e0;
   --on-background: #b0b0b0;
+  --border:white;
   --shadow: rgba(255,255,255,0.05);
+  --text:#bebbfa;
 } 
   
 body {
@@ -145,14 +150,6 @@ nav button{
   font-size:1em;
   margin-left: 10px;
 }
-/*auth forms*/
-form.signup,form.login{  
-  max-width:400px;
-  margin:40px auto;
-  padding:10px;
-  background:var(--surface);
-  border-radius:4px;
-}
 
 
 /* workout home page */
@@ -206,7 +203,7 @@ form.signup,form.login{
   border: none;
   cursor: pointer;
   padding: 0;
-  color: var(--text);
+  color: var(--on-background);
   width: 24px;
   height: 24px;
 }
@@ -225,3 +222,138 @@ body.dark-mode .theme-toggle .sun {
 body.dark-mode .theme-toggle .moon {
   display: inline-block;
 }
+
+/*auth forms*/
+.auth-container {
+  display: flex;
+  min-height: 80vh;
+  background-color: var(--surface);
+}
+
+.auth-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-form-container {
+  max-width: 28rem;
+  width: 100%;
+}
+
+.auth-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-logo svg {
+  width: 3rem;
+  height: 3rem;
+  color: #4f46e5;
+  margin: 0 auto 1rem;
+}
+
+.auth-logo h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  font-family: "Headland One", serif;
+  color: var(--on-surface);
+  margin-bottom: 0.5rem;
+}
+
+.auth-logo p {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.auth-card {
+  background-color: var(--surface);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px var(--shadow);
+  padding: 1.5rem;
+}
+
+.auth-tab {
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: auto;
+  font-size: x-large;
+  color: var(--text);
+}
+
+.auth-form-content {
+  margin-top: 1.5rem;
+}
+
+.signup {
+  margin-bottom: 1rem;
+}
+
+.signup label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  
+  margin-bottom: 0.5rem;
+}
+
+.signup input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-link{
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .auth-form {
+    padding: 2rem;
+  }
+
+  .auth-card {
+    padding: 1.5rem;
+  }
+
+  .auth-logo h2 {
+    font-size: 1.875rem;
+  }
+
+  .auth-logo p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
