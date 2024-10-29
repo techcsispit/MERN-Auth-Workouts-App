@@ -4,7 +4,6 @@ import { toast, ToastContainer } from 'react-toastify';  // Import toast notific
 import 'react-toastify/dist/ReactToastify.css';  // Import default styles for toast notifications
 import { FaEye, FaEyeSlash } from 'react-icons/fa';  // Import icons for showing/hiding password
 import { MdFitbit } from "react-icons/md";
-import './Login.css'
 
 const Signup = () => {
 
