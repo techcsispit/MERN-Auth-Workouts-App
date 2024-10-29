@@ -3,6 +3,8 @@ import { useSignup } from '../hooks/useSignUp';
 import { toast, ToastContainer } from 'react-toastify';  // Import toast notifications
 import 'react-toastify/dist/ReactToastify.css';  // Import default styles for toast notifications
 import { FaEye, FaEyeSlash } from 'react-icons/fa';  // Import icons for showing/hiding password
+import { MdFitbit } from "react-icons/md";
+import './Login.css'
 
 const Signup = () => {
 
@@ -48,11 +50,24 @@ const Signup = () => {
 
     return (
         <>
-            <form className="signup" onSubmit={handleSubmit}>
-                <h3>Sign Up</h3>
+            <div className="auth-container">
+      <div className="auth-form">
+        <div className="auth-form-container">
+          <div className="auth-logo">
+            <MdFitbit />
+            <h2>Welcome to WorkoutBuddy</h2>
+            <p>Your perfect workout partner</p>
+          </div>
+
+          <div className="auth-card">
+           <div className="auth-tab">
+            Sign Up
+           </div>
+           <div className="auth-form-content">
+           <form className="signup" onSubmit={handleSubmit}>
 
                 {/* Email input field */}
-                <label>Email:</label>
+                <label>Email</label>
                 <input
                     type='email'
                     onChange={(e) => setEmail(e.target.value)}  // Update email state on change
@@ -61,7 +76,7 @@ const Signup = () => {
                 />
 
                 {/* Password input field with show/hide functionality */}
-                <label>Password:</label>
+                <label>Password</label>
                 <div style={{ position: 'relative' }}>  {/* Password input wrapper for icon positioning */}
                     <input
                         type={showPassword ? 'text' : 'password'}  // Toggle between 'password' and 'text' based on showPassword state
@@ -85,13 +100,18 @@ const Signup = () => {
                 </div>
 
                 {/* Submit button, disabled while loading */}
-                <button disabled={isLoading}>Sign up</button>
+                <button disabled={isLoading} className='auth-button'>Sign up</button>
 
                 {/* Display validation error (e.g., password too short) */}
                 {validationError && <div className='error'>{validationError}</div>}
                 
                 {/* Display signup error from the custom hook if any */}
                 {error && <div className='error'>{error}</div>}
+                <p className="auth-footer">
+                  By signing up, you agree to our{' '}
+                 <a href="#">Terms of Service</a> and{' '}
+                 <a href="#">Privacy Policy</a>.
+                </p>
             </form>
 
             {/* Toast container for notifications */}
@@ -100,6 +120,11 @@ const Signup = () => {
                 autoClose={3000}  // Close the toast after 3 seconds
                 hideProgressBar={false}  // Show progress bar for the toast
             />
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
         </>
     );
 };
