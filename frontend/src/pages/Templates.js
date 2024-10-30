@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container, Grid, Paper, Typography } from '@mui/material';
+import { colors, Container, Grid, Paper, Typography } from '@mui/material';
 import TemplateForm from '../components/TemplateForm';
 import TemplateList from '../components/TemplateDetails';
 import { useTemplatessContext } from '../hooks/useTemplateContext';
@@ -77,7 +77,7 @@ const Template = () => {
   return (
     <>
     <Navbar />
-    <Container maxWidth="lg" sx={{ marginTop: 4 }}>
+    <Container maxWidth="lg" sx={{ marginTop: 4}}>
       <Grid container spacing={4}>
         {/* Header */}
         <Grid item xs={12}>
