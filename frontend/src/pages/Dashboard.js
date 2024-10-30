@@ -6,6 +6,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 import { useTemplatessContext } from '../hooks/useTemplateContext';
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext';
 import StreakTracker from '../components/StreakTracker';
+import Navbar from '../components/Navbar';
 // import RecentWorkoutsTable from '../components/RecentWorkoutsTable';
 
 // Register chart.js components
@@ -94,6 +95,8 @@ const scatterChartData = {
   };
 
   return (
+    <>
+    <Navbar />
     <Container>
 
       <Grid container spacing={4}>
@@ -155,6 +158,7 @@ const scatterChartData = {
         </Grid>
         </Grid>
     </Container>
+    </>
   );
 };
 

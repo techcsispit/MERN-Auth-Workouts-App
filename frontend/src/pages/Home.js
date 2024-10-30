@@ -8,6 +8,7 @@ import WorkoutForm from "../components/WorkoutForm";
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Slider from '@mui/material/Slider';
+import Navbar from "../components/Navbar";
 
 
 const Home = () => {
@@ -76,6 +77,8 @@ const Home = () => {
   };
 
 return (
+  <>
+  <Navbar />
     <div className="home">
     <div className="workouts ">
     <div className="workout-details-left md:w-2/3 w-full pr-4">
@@ -155,6 +158,7 @@ return (
     </div>
 </div>
 </div>
+</>
 );    
 
 };

@@ -4,6 +4,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';  // Import eye icons for sho
 import { toast, ToastContainer } from 'react-toastify';  // Import toast functions
 import { MdFitbit } from "react-icons/md";
 import 'react-toastify/dist/ReactToastify.css';  // Import React Toastify CSS
+import DarkModeToggle from '../components/DarkMode';
 
 const Login = () => {
 
@@ -48,8 +49,10 @@ const Login = () => {
     };
 
     return (
-        <>
         <div className="auth-container">
+           <div className="auth-theme">
+           <DarkModeToggle />
+           </div>
       <div className="auth-form">
         <div className="auth-form-container">
           <div className="auth-logo">
@@ -113,7 +116,6 @@ const Login = () => {
             </div>
             </div>
             </div>
-        </>
     );
 };
 

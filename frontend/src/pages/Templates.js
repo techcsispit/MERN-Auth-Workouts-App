@@ -4,6 +4,7 @@ import TemplateForm from '../components/TemplateForm';
 import TemplateList from '../components/TemplateDetails';
 import { useTemplatessContext } from '../hooks/useTemplateContext';
 import { useAuthContext } from '../hooks/useAuthContext';
+import Navbar from '../components/Navbar';
 
 const Template = () => {
   const { templates, dispatch } = useTemplatessContext();
@@ -74,6 +75,8 @@ const Template = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <Container maxWidth="lg" sx={{ marginTop: 4 }}>
       <Grid container spacing={4}>
         {/* Header */}
@@ -108,6 +111,7 @@ const Template = () => {
         </Grid>
       </Grid>
     </Container>
+    </>
   );
 };
 
