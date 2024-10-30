@@ -36,7 +36,10 @@ body {
 }
 
 header {
-  background: var(--surface);
+  /* background: var(--surface); */
+  margin-bottom: 20px;
+  margin-top: -20px;
+  
 }
 header .container {
   max-width: 1400px;
@@ -137,7 +140,7 @@ nav{
   align-items:center;
 }
 nav a{
-  margin-left:10px;
+  margin-left:20px;
 }
 nav button{
   background: var(--surface);
@@ -329,6 +332,13 @@ body.dark-mode .theme-toggle .moon {
 .auth-link{
     align-items: center;
     justify-content: center;
+}
+
+.auth-theme{
+    position: absolute; 
+    right:100px;
+    top: 50px;
+    width: 70px;
 }
 
 @media (min-width: 640px) {

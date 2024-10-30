@@ -7,6 +7,7 @@ import AddIcon from '@mui/icons-material/Add';
 import SaveIcon from '@mui/icons-material/Save';
 import axios from 'axios';
 import { useAuthContext } from '../hooks/useAuthContext';
+import Navbar from '../components/Navbar';
 
 const GoalsComponent = () => {
   const [goals, setGoals] = useState([{ exercise: '', targetLoad: '', targetReps: '' }]);
@@ -67,6 +68,8 @@ const GoalsComponent = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <Card sx={{ margin: 4, padding: 2, boxShadow: 3, borderRadius: 2 }}>
       <CardContent>
         <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', color: '#1565C0' }}>
@@ -160,6 +163,7 @@ const GoalsComponent = () => {
         </Box>
       </CardContent>
     </Card>
+    </>
   );
 };
 
