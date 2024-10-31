@@ -32,7 +32,7 @@ const TemplateForm = ({ onSaveTemplate }) => {
   return (
     <form onSubmit={handleSubmit}>
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid item xs={12} padding={3}>
           <TextField
             fullWidth
             label="Template Name"
@@ -44,7 +44,7 @@ const TemplateForm = ({ onSaveTemplate }) => {
         </Grid>
 
         {exercises.map((exercise, index) => (
-          <Grid container spacing={2} key={index}>
+          <Grid container spacing={2} padding={2} key={index}>
             <Grid item xs={12} sm={5}>
               <TextField
                 fullWidth

@@ -39,7 +39,6 @@ header {
   /* background: var(--surface); */
   margin-bottom: 20px;
   margin-top: -20px;
-  
 }
 header .container {
   max-width: 1400px;
@@ -357,6 +356,22 @@ body.dark-mode .theme-toggle .moon {
   .auth-logo p {
     font-size: 1rem;
   }
+}
+
+.log-out:hover{
+  background-color: #2ecc9a55;
+  cursor: pointer;
+}
+
+.logo{
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #4f46e5;
+  margin: 0 auto;
+}
+
+.head{
+  margin-right: 38rem;
 }
 
 

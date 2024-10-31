@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useLogout } from '../hooks/useLogout';
 import DarkModeToggle from "./DarkMode";
+import { MdFitbit } from "react-icons/md";
 
 const Navbar = () => {
 
@@ -15,7 +16,8 @@ const Navbar = () => {
     return ( 
         <header>
             <div className="container">
-                <div className="">
+                <MdFitbit className="logo"/>
+                <div className="head">
                 <Link to='/'>
                     <h1>Workout Buddy</h1>
                 </Link>
@@ -53,7 +55,7 @@ const Navbar = () => {
                     </div>
                     )}
                  <DarkModeToggle />
-                 <button onClick={handleClick}>Log out</button>
+                 <button onClick={handleClick} className="log-out">Log out</button>
                 </nav>
             </div>
         </header>
